@@ -59,11 +59,11 @@ run as a test.
 > 
 > Using your favorite text editor, create the following script and run it. Does it run on the
 > cluster or just our login node?
+>
 > ```
 > {% include /snippets/13/testjob.snip %}
 > ```
-> {: .output}
- 
+> 
 {: .challenge}
 
 If you completed the previous challenge successfully, you probably realise that there is a

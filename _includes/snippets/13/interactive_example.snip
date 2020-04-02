@@ -2,11 +2,11 @@
 `hostname` command with `srun`. (We can cancel an `srun` job with `Ctrl-c`.)
 
 ```
-{{ site.host_prompt }} srun hostname
+{{ site.host_prompt }} srun --account=nn9988k --mem-per-cpu=1G --time=10:00 hostname
 ```
 {: .bash}
 ```
-gra752
+c1-1
 ```
 {: .output}
 
@@ -15,7 +15,7 @@ script, these options are specified on the command-line when starting a job. To 
 uses 2 CPUs for instance, we could use the following command:
 
 ```
-{{ site.host_prompt }} srun -c 2 echo "This job will use 2 CPUs."
+{{ site.host_prompt }} srun  --account=nn9988k --mem-per-cpu=1G --time=1:00 --cpus-per-task=2 echo "This job will use 2 CPUs."
 ```
 {: .bash}
 ```
@@ -27,12 +27,12 @@ Typically, the resulting shell environment will be the same as that for `sbatch`
 
 ### Interactive jobs
 
-Sometimes, you will need a lot of resource for interactive use. Perhaps it's our first time running
+Sometimes, you will need access to compute nodes for interactive use. Perhaps it's our first time running
 an analysis or we are attempting to debug something that went wrong with a previous job.
 Fortunately, SLURM makes it easy to start an interactive job with `srun`:
 
 ```
-{{ site.host_prompt }} srun --pty bash
+{{ site.host_prompt }} srun  --account=nn9988k --mem-per-cpu=1G --time=30:00 --cpus-per-task=2  --pty bash
 ```
 {: .bash}
 

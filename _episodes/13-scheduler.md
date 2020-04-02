@@ -81,10 +81,10 @@ to the scheduler, we use the `{{ site.sched_submit }}` command.
 And that's all we need to do to submit a job. Our work is done -- now the scheduler takes over and
 tries to run the job for us. While the job is waiting to run, it goes into a list of jobs called 
 the *queue*. To check on our job's status, we check the queue using the command
-`{{ site.sched_status }} {{ site.sched_flag_user }}`.
+`{{ site.sched_status }} $USER`.
 
 ```
-{{ site.host_prompt }} {{ site.sched_status }} {{ site.sched_flag_user }}
+{{ site.host_prompt }} {{ site.sched_status }} $USER
 ```
 {: .bash}
 ```

@@ -6,73 +6,56 @@ To demonstrate, let's use `module list`. `module list` shows all loaded software
 {: .bash}
 ```
 Currently Loaded Modules:
-  1) nixpkgs/.16.09  (H,S)   3) gcccore/.5.4.0    (H)   5) intel/2016.4  (t)   7) StdEnv/2016.4 (S)
-  2) icc/.2016.4.258 (H)     4) ifort/.2016.4.258 (H)   6) openmpi/2.1.1 (m)   8) python/3.5.2  (t)
+  1) StdEnv                      (S)   6) hpcx/2.4                       11) ScaLAPACK/2.0.2-gompi-2018b-OpenBLAS-0.3.1      16) XZ/5.2.4-GCCcore-7.3.0     (H)
+  2) GCCcore/7.3.0                     7) OpenMPI/3.1.1-GCC-7.3.0-2.30   12) foss/2018b                                      17) GMP/6.1.2-GCCcore-7.3.0    (H)
+  3) zlib/1.2.11-GCCcore-7.3.0   (H)   8) OpenBLAS/0.3.1-GCC-7.3.0-2.30  13) bzip2/1.0.6-GCCcore-7.3.0                  (H)  18) libffi/3.2.1-GCCcore-7.3.0 (H)
+  4) binutils/2.30-GCCcore-7.3.0 (H)   9) gompi/2018b                    14) ncurses/6.1-GCCcore-7.3.0                  (H)  19) Python/3.6.6-foss-2018b
+  5) GCC/7.3.0-2.30                   10) FFTW/3.3.8-gompi-2018b         15) libreadline/7.0-GCCcore-7.3.0              (H)
 
   Where:
    S:  Module is Sticky, requires --force to unload or purge
-   m:  MPI implementations / Implémentations MPI
-   t:  Tools for development / Outils de développement
    H:             Hidden Module
+
 ```
 {: .output}
 
 ```
-{{ site.host_prompt }} module load beast
+{{ site.host_prompt }} module restore
+{{ site.host_prompt }} module load GATK/4.1.4.0-GCCcore-8.3.0-Java-1.8
 {{ site.host_prompt }} module list
 ```
 {: .bash}
 ```
 Currently Loaded Modules:
-  1) nixpkgs/.16.09    (H,S)   5) intel/2016.4  (t)   9) java/1.8.0_121   (t)
-  2) icc/.2016.4.258   (H)     6) openmpi/2.1.1 (m)  10) beagle-lib/2.1.2 (bio)
-  3) gcccore/.5.4.0    (H)     7) StdEnv/2016.4 (S)  11) beast/2.4.0      (chem)
-  4) ifort/.2016.4.258 (H)     8) python/3.5.2  (t)
-
-  Where:
-   S:     Module is Sticky, requires --force to unload or purge
-   bio:   Bioinformatic libraries/apps / Logiciels de bioinformatique
-   m:     MPI implementations / Implémentations MPI
-   t:     Tools for development / Outils de développement
-   chem:  Chemistry libraries/apps / Logiciels de chimie
-   H:                Hidden Module
-```
-{: .output}
-
-So in this case, loading the `beast` module (a bioinformatics software package), also loaded
-`java/1.8.0_121` and `beagle-lib/2.1.2` as well. Let's try unloading the `beast` package.
-
-```
-{{ site.host_prompt }} module unload beast
-{{ site.host_prompt }} module list
-```
-{: .bash}
-```
-Currently Loaded Modules:
-  1) nixpkgs/.16.09  (H,S)   3) gcccore/.5.4.0    (H)   5) intel/2016.4  (t)   7) StdEnv/2016.4 (S)
-  2) icc/.2016.4.258 (H)     4) ifort/.2016.4.258 (H)   6) openmpi/2.1.1 (m)   8) python/3.5.2  (t)
+  1) StdEnv         (S)   4) zlib/1.2.11-GCCcore-8.3.0   (H)   7) ncurses/6.1-GCCcore-8.3.0     (H)  10) GMP/6.1.2-GCCcore-8.3.0    (H)  13) GATK/4.1.4.0-GCCcore-8.3.0-Java-1.8
+  2) GCCcore/8.3.0        5) binutils/2.32-GCCcore-8.3.0 (H)   8) libreadline/8.0-GCCcore-8.3.0 (H)  11) libffi/3.2.1-GCCcore-8.3.0 (H)
+  3) Java/1.8.0_212       6) bzip2/1.0.8-GCCcore-8.3.0   (H)   9) XZ/5.2.4-GCCcore-8.3.0        (H)  12) Python/3.7.4-GCCcore-8.3.0
 
   Where:
    S:  Module is Sticky, requires --force to unload or purge
-   m:  MPI implementations / Implémentations MPI
-   t:  Tools for development / Outils de développement
    H:             Hidden Module
+
 ```
 {: .output}
+
+So in this case, loading the `GATK` module (a bioinformatics software package), also loaded
+`java/1.8.0_212` and `Python/3.7.4-GCCcore-8.3.0` as well. 
 
 So using `module unload` "un-loads" a module along with its dependencies.
-If we wanted to unload everything at once, we could run `module purge` (unloads everything).
+If we wanted to unload everything at once, we could run `module purge` or `module restore`
+(unloads everything).
 
 ```
 {{ site.host_prompt }} module purge
 ```
 {: .bash}
+
 ```
 The following modules were not unloaded:
   (Use "module --force purge" to unload all):
 
-  1) StdEnv/2016.4    3) icc/.2016.4.258   5) ifort/.2016.4.258   7) imkl/11.3.4.258
-  2) nixpkgs/.16.09   4) gcccore/.5.4.0    6) intel/2016.4        8) openmpi/2.1.1
+  1) StdEnv
+
 ```
 {: .output}
 

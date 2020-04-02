@@ -1,0 +1,15 @@
+When login in for the first time you may get a question whether you trust the server
+you are trying to connect. If you typed the address correctly then it is safe to say “yes”
+to the question at the end of this message and permanently added this server to trusted hosts
+
+```
+ ~ $ ssh sabryr@saga.sigma2.no
+```
+{: .bash}
+
+The authenticity of host 'saga.sigma2.no (158.36.42.36)' can't be established.
+ECDSA key fingerprint is SHA256:qirKlTjO9QSXuCAiuDQeDPqq+jorMFarCW+0qhpaAEA.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? *yes*
+Warning: Permanently added 'saga.sigma2.no,158.36.42.36' (ECDSA) to the list of known hosts.
+sabryr@saga.sigma2.no's password: 
+

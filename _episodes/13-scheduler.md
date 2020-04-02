@@ -29,7 +29,7 @@ If you can relate to an instance where you had to wait for a while in a queue to
 popular restaurant, then you may now understand why sometimes your job do not start instantly
 as in your laptop.
 
-{% include figure.html max-width="75%" file="/fig/restaurant_queue_manager.svg"
+{% include figure.html max-width="85%" file="/fig/restaurant_queue_manager.svg"
 alt="Compare a job scheduler to a waiter in a restaurant" caption="" %}
 
 
@@ -59,15 +59,11 @@ run as a test.
 > 
 > Using your favorite text editor, create the following script and run it. Does it run on the
 > cluster or just our login node?
->
->```
->#!/bin/bash
->
-> echo 'This script is running on:'
-> hostname
-> sleep 120
 > ```
-> {: .bash}
+> {% include /snippets/13/testjob.snip %}
+> ```
+> {: .output}
+ 
 {: .challenge}
 
 If you completed the previous challenge successfully, you probably realise that there is a

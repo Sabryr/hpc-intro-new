@@ -133,7 +133,6 @@ Submit the following job (`{{ site.sched_submit }} {{ site.sched_submit_options 
 {% include /snippets/13/testjob2.snip %}
 ```
 {: .output}
-```
 
 Fantastic, we've successfully changed the name of our job!
 

@@ -130,22 +130,10 @@ Let's illustrate this by example. By default, a job's name is the name of the sc
 Submit the following job (`{{ site.sched_submit }} {{ site.sched_submit_options }} example-job.sh`):
 
 ```
-#!/bin/bash
-{{ site.sched_comment }} {{ site.sched_flag_name }} new_name
-
-echo 'This script is running on:'
-hostname
-sleep 120
-```
-
-```
-{{ site.host_prompt }} {{ site.sched_status }} {{ site.sched_flag_user }}
-```
-{: .bash}
-```
-{% include /snippets/13/statu_name_output.snip %}
+{% include /snippets/13/testjob2.snip %}
 ```
 {: .output}
+```
 
 Fantastic, we've successfully changed the name of our job!
 

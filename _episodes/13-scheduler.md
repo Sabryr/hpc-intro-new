@@ -142,7 +142,7 @@ Fantastic, we've successfully changed the name of our job!
 > constantly check on the status of our job with `{{ site.sched_status }}`. Looking at the
 > man page for `{{ site.sched_submit }}`, can you set up our test job to send you an email
 > when it finishes?
-> For help:[Manual]( `{{ site.queue_manual}}` )
+> For help:`{{ site.queue_manual}}`
 >
 {: .challenge}
 

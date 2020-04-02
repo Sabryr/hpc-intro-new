@@ -59,12 +59,11 @@ run as a test.
 > 
 > Using your favorite text editor, create the following script and run it. Does it run on the
 > cluster or just our login node?
->
-> ```
-> {% include /snippets/13/testjob.snip %}
-> ```
-> 
-{: .challenge}
+
+```
+{% include /snippets/13/testjob.snip %}
+```
+{: .output}
 
 If you completed the previous challenge successfully, you probably realise that there is a
 distinction between running the job through the scheduler and just "running it". To submit this job

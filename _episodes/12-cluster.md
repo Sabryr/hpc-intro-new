@@ -49,6 +49,9 @@ This establishes a temporary encrypted connection between your laptop and `{{ si
 The word before the `@` symbol, e.g. `yourUsername` here, is the user account name that Lola has access 
 permissions for on the cluster. 
 
+{% include /snippets/12/info.snip %}
+
+
 > ## Where do I get this `ssh` from ?
 > On Linux and/or macOS, the `ssh` command line utility is almost always pre-installed. Open a
 > terminal and type `ssh --help` to check if that is the case. 

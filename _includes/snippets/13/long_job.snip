@@ -1,5 +1,8 @@
 #!/bin/bash
-#SBATCH -t 0:0:30
+
+#SBATCH --account=nn9988k --mem-per-cpu=2G
+#SBATCH --time=00:30
+#SBATCH --job-name new_name
 
 echo 'This script is running on:'
 hostname

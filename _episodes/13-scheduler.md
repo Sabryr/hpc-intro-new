@@ -55,10 +55,10 @@ scheduler to run the job is called *batch job submission*.
 In this case, the job we want to run is just a shell script. Let's create a demo shell script to 
 run as a test.
 
-> ## Creating our test job
-> 
-> Using your favorite text editor, create the following script and run it. Does it run on the
-> cluster or just our login node?
+### Creating our test job
+ 
+ Using your favorite text editor, create the following script and run it. Does it run on the
+ cluster or just our login node?
 
 ```
 {% include /snippets/13/testjob.snip %}

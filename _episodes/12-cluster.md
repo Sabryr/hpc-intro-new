@@ -29,6 +29,10 @@ media platforms), as well as more traditional "compute" resources. An *HPC syste
 is a term used to describe a network of computers. The computers in a cluster typically share a common
 purpose, and are used to accomplish tasks that might otherwise be too big for any one computer.
 
+
+{% include figure.html url="" max-width="50%" file="/fig/connect-to-remote.svg"
+ alt="Connect to cluster" caption="" %}
+
 ## Logging in
 
 Go ahead and log in to the cluster: {{ site.host_name }} at {{ site.host_location }}.
@@ -89,6 +93,20 @@ quick tests. It should never be used for doing actual work.
 The real work on a cluster gets done by the *worker* (or *compute*) *nodes*. Worker nodes come in
 many shapes and sizes, but generally are dedicated to long or hard tasks that require a lot of
 computational resources.
+
+
+{% include figure.html url="" max-width="50%" file="/fig/login_node.svg"
+ alt="Connect to cluster" caption="" %}
+
+When a user login to the cluster using ssh, he or she landed on a login node, which act as an
+entrance point to the cluster. Login nodes are used for light weight tasks
+such as managing user login, copy files to the cluster , copy files from the cluster, install
+software, submit and monitor jobs etc. We never perform analysis on the login node. If we do t>
+login nodes will choke and other users may not be login or copy files. The analysis are perfor>
+on compute nodes and that process we will learn later in the lessons. This is a main difference
+between executing your program on a remote server and using a cluster to run the program.
+Lola being a good citizen, acknowledges the  importance of using shared resources in a way that
+will not hinder the other users.
 
 All interaction with the worker nodes is handled by a specialized piece of software called a
 scheduler (the scheduler used in this lesson is called {{ site.workshop_shed_name }}). We'll

@@ -44,12 +44,21 @@ Go ahead and log in to the cluster: {{ site.host_name }} at {{ site.host_locatio
 Remember to replace `yourUsername` with the username supplied by the instructors. You will be asked for
 your password. But watch out, the characters you type are not displayed on the screen.
 
+```
+{% include /snippets/12/after-login.snip %}
+```
+{: .output}
+
 You are logging in using a program known as the secure shell or `ssh`. 
 This establishes a temporary encrypted connection between your laptop and `{{ site.host_login }}`.
 The word before the `@` symbol, e.g. `yourUsername` here, is the user account name that you have access 
 permissions for on the cluster. 
 
-{% include /snippets/12/info.snip %}
+
+```
+{% include /snippets/12/authenticity-of-host.snp %}
+```
+{: .output}
 
 
 > ## Where do I get this `ssh` from ?

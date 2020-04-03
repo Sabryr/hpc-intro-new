@@ -46,7 +46,7 @@ your password. But watch out, the characters you type are not displayed on the s
 
 You are logging in using a program known as the secure shell or `ssh`. 
 This establishes a temporary encrypted connection between your laptop and `{{ site.host_login }}`.
-The word before the `@` symbol, e.g. `yourUsername` here, is the user account name that Lola has access 
+The word before the `@` symbol, e.g. `yourUsername` here, is the user account name that you have access 
 permissions for on the cluster. 
 
 {% include /snippets/12/info.snip %}
